@@ -1,0 +1,15 @@
+<ion-view title="Login" id="page8">
+<ion-content padding="true" style="background: url(img/jQ7ihVaQyKCEQfKjysJw_Login.jpg) no-repeat center;background-size:cover;" class="has-header">
+<h3 id="login-heading8" style="color:#685CEE;text-align:center;">Bienvenido</h3>
+<form id="login-form4" class="list" name="myForm">
+	<label class="item item-input" id="login-input7">
+		<span class="input-label">Nombre:</span>
+		<input type="text" name="nombre" ng-model="usuario.nombre" placeholder="" required>
+	</label>
+	<span class="alerta" ng-show="myForm.nombre.$invalid">Se necesita el nombre </span>
+	<br>
+</form>
+<button  ng-click="Iniciar()" ng-disabled="myForm.$invalid" class="button button-positive  button-block">Aceptar</button>
+
+</ion-content>
+</ion-view>
