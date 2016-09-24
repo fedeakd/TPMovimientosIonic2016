@@ -1,3 +1,61 @@
-<ion-view title="Grabacion" id="page6">
-    <ion-content padding="true" style="background: url(img/aTDzqtzSzuQNkoGxK6nY_Grabacion.jpg) no-repeat center;background-size:cover;" class="has-header"></ion-content>
+<ion-view title="Grabacion" id="page6" >
+<ion-content padding="true" style="background: url(img/aTDzqtzSzuQNkoGxK6nY_Grabacion.jpg) no-repeat center;background-size:cover;" class="has-header" ng-init="trabajo()">
+
+<ion-radio ng-model="c.choice" ng-value="'izquierda'">Gira a la izquierda</ion-radio>
+<ion-radio ng-model="c.choice" ng-value="'derecha'">Gira a la derecha</ion-radio>
+<ion-radio ng-model="c.choice" ng-value="'acostado'">Acostado</ion-radio>
+<ion-radio ng-model="c.choice" ng-value="'dadoVuelta'">dado vuelta</ion-radio>
+<button class="button button-block button-positive" ng-click="grabar()" >
+	grabar
+</button> 
+
+<button class="button button-block button-positive" ng-click="parar()">
+	parar
+</button> 
+<h1>{{queTrae}}</h1>
+</ion-content>
 </ion-view>
+
+
+	<!--	
+	$scope.c={choice:''}
+		try{
+			//var src = cordova.file.externalRootDirectory+"Sonidos/audio.wav";
+			var media;
+		}
+		catch(e){
+			console.log("No es un celular");
+
+		}
+		$scope.parar=function(){
+			media.stopRecord();
+			   media.play(); // Android
+			}
+
+			$scope.grabar=function(){
+				console.log("Sonidos/"+$scope.c.choice+".wav");
+				if($scope.c.choice==""){
+					//alert("Seleccion una opcion antes de grabar ");
+					return;
+				}
+
+				var src = cordova.file.externalRootDirectory+"Sonidos/audio.wav";
+				//alert(src);
+				var media = $cordovaMedia.newMedia(src);
+				media.startRecord();
+				//$scope.parteSonido();
+
+			}
+
+			$scope.parteSonido=function(){
+				$ionicPlatform.ready(function() {
+					$cordovaFile.checkFile(cordova.file.externalRootDirectory+"Sonidos/",'izquierda'+".wav")
+					.then(function (success) {
+						alert("existe")
+						$scope.devuelve=success;
+					}, function (error) {
+						alert("no existe")
+					})
+				})
+			}
+		}-->

@@ -52,7 +52,7 @@ angular.module('app.routes', [])
     controller: 'loginCtrl'
   })
 
-$urlRouterProvider.otherwise('/Login')
+$urlRouterProvider.otherwise('/Movimientos/Rotacion')
 
   
 
